@@ -173,15 +173,18 @@ function updateView() {
   }
 }
 
+
 listElement.addEventListener("click", event => {
   const button = event.target.closest("[data-id]");
+
   if (!button) return;
 
-  window.location.hash = encodeURIComponent(
-    button.dataset.id
-  );
+  const centerId = button.dataset.id;
+
+  window.location.hash = encodeURIComponent(centerId);
 
   updateView();
+
   document.getElementById("tram-cuu-ho")
     .scrollIntoView({ behavior: "smooth" });
 });
